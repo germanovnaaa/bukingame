@@ -1,0 +1,44 @@
+{% load static %}
+<html lang="en">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="{% static 'main_window/css/my_orders.css' %}">
+    <script src="{% static 'main_window/js/homepage.js' %}"></script>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Мои заказы</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-custom navbar-mainbg">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                <li class="nav-item active">
+                    <a class="nav-link" href=""><i class="far fa-address-book"></i>Мои заказы</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/"><i class="far fa-clone"></i>Настольные игры</a>
+                </li>
+            </ul>
+        </div>
+</nav>
+<div class="container">
+      <form action="get_order_table" method="POST">
+          {% csrf_token %}
+            <h3>Подтвердите действие</h3>
+            <label for="email"><i class="fa fa-envelope"></i> Электронный адрес</label>
+            <input type="text" id="email" value="{{email}}" name="email" placeholder="john@example.com">
+            <label for="password"><i class="fa fa-envelope"></i>Пароль</label>
+            <input type="password" id="password" value="{{password}}" name="password" placeholder="Введите свой пароль">
+            <button type="submit" class="btn">Подтвердить</button>
+      </form>
+</div>
+      {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <br {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</br>
+        {% endfor %}
+    </ul>
+    {%endif%}
+</body>
+</html>

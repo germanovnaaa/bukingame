@@ -1,0 +1,45 @@
+{% load static %}
+<html lang="en">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="{% static 'main_window/css/reg.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+</head>
+<body>
+<div class="sidenav">
+         <div class="login-main-text">
+            <h2>Добро пожаловать в <br>Bukingames, <br>Дорогой гость</h2>
+         </div>
+      </div>
+      <div class="main">
+         <div class="col-md-6 col-sm-12">
+            <div class="login-form">
+               <form action="signup" method="POST">
+                   {% csrf_token %}
+                   <div class="form-group">
+                     <label>Введите электронную почту</label>
+                     <input type="text" value="{{email}}" id="email" name="email" class="form-control" placeholder="">
+                   </div>
+                   <div class="form-group">
+                     <label>Введите пароль</label>
+                     <input type="password" value="{{password}}" id="password" name="password" class="form-control" placeholder="Должен содержать более 5 символов">
+                  </div>
+                   <a href="http://127.0.0.1:8000/">Вернуться на главную страницу</a>
+                  <button type="submit" class="btn btn-secondary">Зарегистрироваться</button>
+                   {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <br {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</br>
+                {% endfor %}
+            </ul>
+                   {%endif%}
+               </form>
+            </div>
+         </div>
+      </div>
+
+</body>
+</html>

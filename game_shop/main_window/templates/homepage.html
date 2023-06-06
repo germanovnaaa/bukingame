@@ -1,0 +1,71 @@
+{% load static %}
+<html lang="en">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="{% static 'main_window/css/homepage.css' %}">
+    <script src="{% static 'main_window/js/homepage.js' %}"></script>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Главная страница</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-custom navbar-mainbg">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                <li class="nav-item active">
+                    <a class="nav-link" href="http://127.0.0.1:8000/"><i class="far fa-address-book"></i>Настольные игры</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/my_orders"><i class="far fa-clone"></i>Мои заказы</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/Signup_page"><i class="far fa-clone"></i>Регистрация</a>
+                </li>
+            </ul>
+        </div>
+</nav>
+<section class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 col-sm-4">
+                <div class="product-card" style="width: 18rem;">
+                  <img src="{% static 'main_window/images/аркхэм.jpg' %}" class="card-img-top" alt="">
+                  <div class="card-body">
+                    <h5 class="card-title">Ужас Аркхэма</h5>
+                    <p class="card-text">Нечто безумное и страшное пробуждается в небольшом городке Аркхэм.
+                    Успей узнать сейчас, пока не стало слишком поздно!</p>
+                      $15.99
+                    <a href="http://127.0.0.1:8000/orders_archam" class="btn btn-primary">В корзину</a>
+                  </div>
+                </div>
+            </div>
+            <div class="col-sm-2 col-sm-4">
+                <div class="product-card" style="width: 18rem;">
+                  <img src="{% static 'main_window/images/pirate.jpg' %}" class="card-img-top" alt="">
+                  <div class="card-body">
+                    <h5 class="card-title">Пираты Карибского моря</h5>
+                    <p class="card-text">"Пираты Карибского моря: Мертвецы не рассказывают сказки" –
+                        это карточная настольная игра по мотивам известнейшей киносаги!</p>
+                      $25.99
+                    <a href="http://127.0.0.1:8000/orders_caribian" class="btn btn-primary">В корзину</a>
+                  </div>
+                </div>
+            </div>
+            <div class="col-sm-2 col-sm-4">
+                <div class="product-card" style="width: 18rem;">
+                  <img src="{% static 'main_window/images/кринж.jpg' %}" class="card-img-top" alt="">
+                  <div class="card-body">
+                    <h5 class="card-title">Это полный кринж</h5>
+                    <p class="card-text">Чел, ты... Да вы просто обязаны сыграть в эту игру!
+                        Стыд настолько испанский, что убежал на корриду после концерта фламенко... </p>
+                    $12.99
+                    <a href="http://127.0.0.1:8000/orders_cringe" class="btn btn-primary">В корзину</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
